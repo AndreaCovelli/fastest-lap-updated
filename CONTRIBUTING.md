@@ -1,16 +1,16 @@
 # Contributing to Fastest-lap
 
-Please read carefully these lines before contributing with your own source code to this project. 
+Please read carefully these lines before contributing with your own source code to this project.  
 
 ## C++ coding guidelines
 
-This section gives guidelines regarding the programming style for C++ code. 
+This section gives guidelines regarding the programming style for C++ code.  
 
 C++ is not easy, and it needs time to master. Therefore, if you are new to C++, think of spending some time reading the code first and try to understand how C++ works before even thinking to implement new features in the project.
 
 ### General style
 
-- A header `.h` file should include function and class declarations, and a `.hpp` file includes the implementation. 
+- A header `.h` file should include function and class declarations, and a `.hpp` file includes the implementation.  
 - The `.h` file shall include the `.hpp` file, and other files only should include the `.h` file.
 - Always include safeguards, named after the name of the file. E.g., for `my_class.h` use `#ifndef MY_CLASS_H__`, and `my_class.hpp` `#ifndef MY_CLASS_HPP__`
 - There shall not be commented code lines.
@@ -21,6 +21,7 @@ C++ is not easy, and it needs time to master. Therefore, if you are new to C++, 
 - Function names must be lower case 
 - File names must be lower case
 - Add newlines for braces:
+  
   ```cpp
   if (statement_is_true)
   {
@@ -35,12 +36,13 @@ C++ is not easy, and it needs time to master. Therefore, if you are new to C++, 
     // do something...
   }
   ```
+
 - Use ```// comment``` for comments instead of ```/*  comment */```
 - Add `const` statements whenever it applies.
 - Avoid manual dynamic allocation of variables (i.e. avoid using `new` and `delete`). Use `std::vector` and smart pointers instead.
 - Document well your code through comments in doxygen format.
-- Use spacing between operators (i.e. `i = 0` instead of `i=0`)
- 
+- Use spacing between operators (i.e. `i = 0` instead of `i=0`)  
+
 ### Classes
 
 - Class names must start with upper case, and should use Snake_case
@@ -53,6 +55,7 @@ C++ is not easy, and it needs time to master. Therefore, if you are new to C++, 
     using base_type = Parent;
   };
   ```
+  
 - Do not have `const` data members, as it prevents the class from having a copy-assignment operator.
 - Make `public:` only what it is truly required. The rest should default to `private:`
 - Use `static` member functions if their implementation does not require an instance of the class.

@@ -1,6 +1,6 @@
 # Fastest-lap 🏁🏎
 
-Fastest-lap is a vehicle dynamics simulator. It can be used to understand vehicle dynamics, to learn about driving techniques, to design car prototypes, or just for fun!
+Fastest-lap is a vehicle dynamics simulator (for **2d tracks**) originally created by Juan Manzanero. It can be used to understand vehicle dynamics, to learn about driving techniques, to design car prototypes, or just for fun!
 
 [![MacOS](https://github.com/juanmanzanero/fastest-lap/actions/workflows/macos.yml/badge.svg)](https://github.com/juanmanzanero/fastest-lap/actions/workflows/macos.yml)
 [![Linux](https://github.com/juanmanzanero/fastest-lap/actions/workflows/linux.yml/badge.svg)](https://github.com/juanmanzanero/fastest-lap/actions/workflows/linux.yml)
@@ -11,9 +11,8 @@ Fastest-lap is a vehicle dynamics simulator. It can be used to understand vehicl
 ![test](https://user-images.githubusercontent.com/26557659/173203219-077be886-7c84-49a8-a4c7-762c9f6933f7.png)
 
 <p align="center">
-  <img src="https://pbs.twimg.com/media/FLbX1kTWQAArl-O?format=jpg&name=large" />
+  <img src="https://pbs.twimg.com/media/FLbX1kTWQAArl-O?format=jpg&name=large"/>
 </p>
-
 
 ### What can be done
 
@@ -28,8 +27,6 @@ Fastest-lap is a vehicle dynamics simulator. It can be used to understand vehicl
   This is not a quasi-steady-state simulation. The model solves the fully transient states as in the dynamic equations without steady-state assumptions.
 
 https://user-images.githubusercontent.com/26557659/163474269-5c195f4b-2109-419d-af49-7b7fa86a603d.mp4
-
-
 
 [gg]: https://github.com/juanmanzanero/fastest-lap/tree/main/examples/python/kart/gg-diagram
 [optimal-laptime]: https://github.com/juanmanzanero/fastest-lap/tree/main/examples/python/f1/optimal-laptime
@@ -73,89 +70,77 @@ Fastest-lap uses several open-source libraries:
 [loggercpp]: https://github.com/juanmanzanero/logger-cpp
 [lioncpp]: https://github.com/juanmanzanero/lion-cpp
 
-### Installation
-
-#### Windows 10
-
-Precompiled binaries are available to download for every release.
-  - [v0.1](https://github.com/juanmanzanero/fastest-lap/releases/tag/v0.1)
-
-Download and unzip. The contents of the zip folder are:
-  - bin: the dynamic libraries. Fastest-lap C++ core is there. If fastest-lap is used from MATLAB, point `loadlibrary()` to this directory.
-  - include: fastestlapc.h and fastest_lap.py. To use python scripts, make sure this folder is on the `PYTHONPATH`
-  - examples: python notebook examples.
-  - database: car and track data
-
-#### Mac and Linux
+### Installation (only MacOs and Linux)
 
 This project uses CMake to build the source code and produce the binaries.
 
-The canonical steps to compile a CMake project are: (assume `$FASTESTLAP` is the source code top level.)
+The steps to follow to compile a CMake project are the following ones:
 
-1.  Create a build folder.
+1. Create a _build_ folder.
 
-```
-mkdir ${FASTESTLAP}/build
-```
+  ```sh
+  mkdir build
+  ```
 
-2. From the build folder, run cmake
+2. From the _build_ folder, run _cmake_
 
-```
-cd ${FASTESTLAP}/build && cmake ..
-```
+  ```sh
+  cd build && cmake ..
+  ```
 
-The options available for cmake are:
+The options available for **CMake** are:
 
-```
+```sh
 -DCMAKE_BUILD_TYPE=Debug/Release
 -DCMAKE_INSTALL_PREFIX=/path/to/install/dir
 -DCODE_COVERAGE=Yes/No: enables code coverage (if so, use with -DCMAKE_BUILD_TYPE=Debug)
 -DBUILD_DOC=Yes/No: builds doxygen documentation
+
+(and many others)
 ```
 
 At this stage, CMake will download and install all the thirdparty dependencies.
 
 3. Compile
 
-```
-make
-```
+  ```sh
+  make
+  ```
 
 4. Test (optional but recommended)
 
-```
-ctest --verbose
-```
+  ```sh
+  ctest --verbose
+  ```
 
 5. Install (optional)
 
-```
-make install
-```
+  ```sh
+  make install
+  ```
 
 #### Linux
 
-A Docker build environment is provided and can be used to compile the shared library and generate the Python bindings.
+A Docker build environment is provided and can be used to compile the shared library and generate the Python bindings. (Only for experts, **not recommended**)
 
 ```shell
 sh ./src/scripts/linux/docker_compile.sh
 ```
 
-
 ### Documentation
 
-Read the latest fastest-lap [online documentation](http://fastest-lap.readthedocs.io/)
+Read the latest fastest-lap [online documentation]<!--(http://fastest-lap.readthedocs.io/) -->
 
 ### References
 
-[1] [Tremlett, A. J., and D. J. N. Limebeer. "Optimal tyre usage for a formula one car." Vehicle System Dynamics 54.10 (2016): 1448-1473.][link1]<br/>
-[2] [Lot, Roberto, and Nicola Dal Bianco. "Lap time optimisation of a racing go-kart." Vehicle System Dynamics 54.2 (2016): 210-230.][link2]<br/>
-[3] [Dal Bianco, Nicola, Roberto Lot, and Marco Gadola. "Minimum time optimal control simulation of a GP2 race car." Proceedings of the Institution of Mechanical Engineers, Part D: Journal of Automobile Engineering 232.9 (2018): 1180-1195.][link3]<br/>
-[4] [Lot, Roberto, and Matteo Massaro. "A symbolic approach to the multibody modeling of road vehicles." International Journal of Applied Mechanics 9.05 (2017): 1750068.][link4]<br/>
-[5] [Kelly, Daniel P., and Robin S. Sharp. "Time-optimal control of the race car: a numerical method to emulate the ideal driver." Vehicle System Dynamics 48.12 (2010): 1461-1474.][link5]<br/>
-[6] [Piccinini, Mattia. "Path planning and control of self-driving vehicles at the limits of handling"][link6]<br/>
-[7] [Casanova, D. "On minimum time vehicle manoeuvring: the theoretical optimal lap"][link7]<br/>
-[8] [Perantoni, G. et al. "Optimal Control for a Formula One Car with Variable Parameters"][link8]<br/>
+[1] [Tremlett, A. J., and D. J. N. Limebeer. "Optimal tyre usage for a formula one car." Vehicle System Dynamics 54.10 (2016): 1448-1473.][link1]  
+[2] [Lot, Roberto, and Nicola Dal Bianco. "Lap time optimisation of a racing go-kart." Vehicle System Dynamics 54.2 (2016): 210-230.][link2]  
+[3] [Dal Bianco, Nicola, Roberto Lot, and Marco Gadola. "Minimum time optimal control simulation of a GP2 race car." Proceedings of the Institution of Mechanical Engineers, Part D: Journal of Automobile Engineering 232.9 (2018): 1180-1195.][link3]  
+[4] [Lot, Roberto, and Matteo Massaro. "A symbolic approach to the multibody modeling of road vehicles." International Journal of Applied Mechanics 9.05 (2017): 1750068.][link4]  
+[5] [Kelly, Daniel P., and Robin S. Sharp. "Time-optimal control of the race car: a numerical method to emulate the ideal driver." Vehicle System Dynamics 48.12 (2010): 1461-1474.][link5]  
+[6] [Piccinini, Mattia. "Path planning and control of self-driving vehicles at the limits of handling"][link6]  
+[7] [Casanova, D. "On minimum time vehicle manoeuvring: the theoretical optimal lap"][link7]  
+[8] [Perantoni, G. et al. "Optimal Control for a Formula One Car with Variable Parameters"][link8]  
 
 [link1]: https://www.tandfonline.com/doi/abs/10.1080/00423114.2016.1213861
 [link2]: https://www.tandfonline.com/doi/abs/10.1080/00423114.2015.1125514
