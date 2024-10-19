@@ -1,4 +1,5 @@
 #!/bin/sh
+# Script to build the project in a separate directory automatically
 
 mkdir build
 cd build
