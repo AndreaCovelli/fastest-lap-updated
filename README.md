@@ -1,6 +1,6 @@
 # Fastest-lap 🏁🏎
 
-Fastest-lap is a vehicle dynamics simulator (for **2d tracks**) originally created by Juan Manzanero. It can be used to understand vehicle dynamics, to learn about driving techniques, to design car prototypes, or just for fun!
+Fastest-lap is a vehicle dynamics simulator (for **2d tracks**) originally created by **Juan Manzanero**. It can be used to understand vehicle dynamics, to learn about driving techniques, to design car prototypes, or just for fun!
 
 [![MacOS](https://github.com/juanmanzanero/fastest-lap/actions/workflows/macos.yml/badge.svg)](https://github.com/juanmanzanero/fastest-lap/actions/workflows/macos.yml)
 [![Linux](https://github.com/juanmanzanero/fastest-lap/actions/workflows/linux.yml/badge.svg)](https://github.com/juanmanzanero/fastest-lap/actions/workflows/linux.yml)
